@@ -56,7 +56,7 @@ class PerlinGenerator {
     
     init(){
         permut = []
-        for var i = 0; i < PERMUTATION_SIZE; i++ {
+        for _ in 0..<PERMUTATION_SIZE {
             permut.append(Int(rand() & 0xff))
         }
         octaves = 1
@@ -189,7 +189,7 @@ class PerlinGenerator {
     func perlinNoise(x:Float, y:Float, z:Float, t:Float) -> Float{
         
         var noise:Float = 0.0
-        for (var octave = 0; octave<self.octaves; octave++) {
+        for octave in 0..<self.octaves {
             let frequency:Float = powf(2,Float(octave))
             let amplitude = powf(self.persistence, Float(octave))
             
